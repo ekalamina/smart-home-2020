@@ -1,4 +1,9 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.handlers;
+
+import ru.sbt.mipt.oop.*;
+import ru.sbt.mipt.oop.components.Door;
+import ru.sbt.mipt.oop.components.Light;
+import ru.sbt.mipt.oop.handlers.EventHandler;
 
 import java.util.Collection;
 

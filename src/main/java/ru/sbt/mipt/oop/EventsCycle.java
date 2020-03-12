@@ -1,5 +1,7 @@
 package ru.sbt.mipt.oop;
 
+import ru.sbt.mipt.oop.handlers.EventHandler;
+
 import java.util.List;
 
 public class EventsCycle {
