@@ -4,7 +4,7 @@ import static ru.sbt.mipt.oop.SensorEventType.DOOR_CLOSED;
 
 public class EventHallDoorHandler implements EventHandler {
 
-    private SensorCommandSender sensorCommandSender;
+    private SensorCommandSender sensorCommandSender = new SensorCommandSender();
 
     @Override
     public void handleEvent(SmartHome smartHome, SensorEvent event) {
