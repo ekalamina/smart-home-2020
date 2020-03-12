@@ -5,7 +5,7 @@ import ru.sbt.mipt.oop.handlers.EventHandler;
 import java.util.List;
 
 public class EventsCycle {
-    public static void EventsCycle(SmartHome smartHome, List<EventHandler> handlers) {
+    public static void runEvents(SmartHome smartHome, List<EventHandler> handlers) {
         SensorEvent event = EventGetter.getNextSensorEvent();
         while (event != null) {
             System.out.println("Got event: " + event);

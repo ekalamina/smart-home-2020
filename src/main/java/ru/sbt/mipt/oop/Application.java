@@ -18,7 +18,7 @@ public class Application {
         List<EventHandler> handlers = Arrays.asList(new EventDoorHandler(), new EventLightHandler(),
                 new EventHallDoorHandler());
         // начинаем цикл обработки событий
-        EventsCycle.EventsCycle(smartHome, handlers);
+        EventsCycle.runEvents(smartHome, handlers);
     }
 
 }
