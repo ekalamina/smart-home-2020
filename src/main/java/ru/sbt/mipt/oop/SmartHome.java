@@ -22,12 +22,4 @@ public class SmartHome {
         return rooms;
     }
 
-    public Room getRoomByName(String name) {
-        for (Room room : rooms) {
-            if (room.getName().equals(name)) {
-                return room;
-            }
-        }
-        return null;
-    }
 }

@@ -10,10 +10,9 @@ public class Application {
         // считываем состояние дома из файла
         HomeInitializer homeInitializer = new HomeJsonInitializer();
         SmartHome smartHome = homeInitializer.initializeHome();
-        List<EventHandler> handlers = Arrays.asList(new EventDoorHandler(), new EventLightHandler(),
-                new EventHallDoorHandler());
         // начинаем цикл обработки событий
-        EventsCycle.EventsCycle(smartHome, handlers);
+        EventsCycles eventsCycles = new EventsCycle();
+        eventsCycles.runCycle(smartHome);
     }
 
 }

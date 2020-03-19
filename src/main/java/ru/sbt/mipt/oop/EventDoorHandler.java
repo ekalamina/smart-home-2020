@@ -13,15 +13,21 @@ public class EventDoorHandler implements EventHandler{
                 for (Door door : room.getDoors()) {
                     if (door.getId().equals(event.getObjectId())) {
                         if (event.getType() == DOOR_OPEN) {
-                            door.setOpen(true);
-                            System.out.println("Door " + door.getId() + " in room " + room.getName() + " was opened.");
+                            logOpen(door,room);
                         } else {
-                            door.setOpen(false);
-                            System.out.println("Door " + door.getId() + " in room " + room.getName() + " was closed.");
+                            logClose(door,room);
                         }
                     }
                 }
             }
         }
+    }
+    public void logOpen(Door door,Room room){
+        door.setOpen(true);
+        System.out.println("Door " + door.getId() + " in room " + room.getName() + " was opened.");
+    }
+    public void logClose(Door door,Room room){
+        door.setOpen(false);
+        System.out.println("Door " + door.getId() + " in room " + room.getName() + " was closed.");
     }
 }
