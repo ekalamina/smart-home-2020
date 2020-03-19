@@ -18,15 +18,21 @@ public class EventDoorHandler implements EventHandler {
                     Door door = (Door) object;
                     if (door.getId().equals(event.getObjectId())) {
                         if (event.getType() == DOOR_OPEN) {
-                            door.setOpen(true);
-                            System.out.println("Door " + door.getId() + " was opened.");
+                            logOpen(door);
                         } else {
-                            door.setOpen(false);
-                            System.out.println("Door " + door.getId() + " was closed.");
+                           logClose(door);
                         }
                     }
                 }
             });
         }
+    }
+    private void logOpen(Door door){
+        door.setOpen(true);
+        System.out.println("Door " + door.getId() + " was opened.");
+    }
+    private void logClose(Door door){
+        door.setOpen(false);
+        System.out.println("Door " + door.getId() + " was closed.");
     }
 }

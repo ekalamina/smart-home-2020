@@ -7,8 +7,9 @@ import ru.sbt.mipt.oop.components.Light;
 import ru.sbt.mipt.oop.components.Room;
 
 public class EventHallDoorHandlerTest {
+    private final SensorCommandSender sensorCommandSender = new SensorCommandSender();
     private HomeInitializer homeInitializer = new HomeJsonInitializer();
-    private EventHandler handler = new EventHallDoorHandler();
+    private EventHandler handler = new EventHallDoorHandler(sensorCommandSender);
 
     @Test
     public void TestDoorCloseEvent() {
