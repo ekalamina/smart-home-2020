@@ -1,9 +1,8 @@
 package ru.sbt.mipt.oop;
 
-import ru.sbt.mipt.oop.handlers.EventDoorHandler;
-import ru.sbt.mipt.oop.handlers.EventHallDoorHandler;
-import ru.sbt.mipt.oop.handlers.EventHandler;
-import ru.sbt.mipt.oop.handlers.EventLightHandler;
+import ru.sbt.mipt.oop.decorators.AlarmDecorator;
+import ru.sbt.mipt.oop.decorators.SmsDecorator;
+import ru.sbt.mipt.oop.handlers.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,8 +10,13 @@ import java.util.List;
 public class EventsCycle implements EventsCycles {
 
     private SensorCommandSender sensorCommandSender;
-    private final List<EventHandler> handlers = Arrays.asList(new EventDoorHandler(), new EventLightHandler(),
-            new EventHallDoorHandler(sensorCommandSender));
+    private final List<EventHandler> handlers = Arrays.asList(new EventAlarmHandler(),
+            new AlarmDecorator(new EventDoorHandler()),
+            new AlarmDecorator(new EventLightHandler()),
+            new AlarmDecorator(new EventHallDoorHandler(sensorCommandSender)),
+            new SmsDecorator(new EventDoorHandler()),
+            new SmsDecorator(new EventLightHandler()),
+            new SmsDecorator(new EventHallDoorHandler(sensorCommandSender)));
 
     @Override
     public void runCycle(SmartHome smartHome) {
