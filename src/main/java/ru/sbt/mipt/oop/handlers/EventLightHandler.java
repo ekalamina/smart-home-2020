@@ -3,8 +3,6 @@ package ru.sbt.mipt.oop.handlers;
 import ru.sbt.mipt.oop.SensorEvent;
 import ru.sbt.mipt.oop.SmartHome;
 import ru.sbt.mipt.oop.components.Light;
-import ru.sbt.mipt.oop.components.Room;
-import ru.sbt.mipt.oop.handlers.EventHandler;
 
 import static ru.sbt.mipt.oop.SensorEventType.LIGHT_OFF;
 import static ru.sbt.mipt.oop.SensorEventType.LIGHT_ON;
