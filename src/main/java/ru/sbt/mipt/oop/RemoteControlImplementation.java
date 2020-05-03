@@ -4,22 +4,15 @@ import rc.RemoteControl;
 import ru.sbt.mipt.oop.commands.Command;
 
 import java.util.HashMap;
-import java.util.Set;
 
 public class RemoteControlImplementation implements RemoteControl {
 
     public HashMap<String, Command> commandHashMap;
     public String id;
 
-    public RemoteControlImplementation(String id) {
-        this.commandHashMap = new HashMap<>();
+    public RemoteControlImplementation(HashMap<String, Command> map, String id) {
+        this.commandHashMap = map;
         this.id = id;
-    }
-
-    public void putCommand(String button, Command command) {
-        if (!commandHashMap.containsKey(button)) {
-            commandHashMap.put(button, command);
-        }
     }
 
     @Override
@@ -29,5 +22,7 @@ public class RemoteControlImplementation implements RemoteControl {
         }
     }
 
-
+    public String getId() {
+        return id;
+    }
 }
