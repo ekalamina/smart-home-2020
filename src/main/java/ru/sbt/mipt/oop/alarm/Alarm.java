@@ -6,6 +6,7 @@ public class Alarm {
 
     public Alarm() {
         this.state = new DeactivatedAlarmState(this);
+        this.code = "";
     }
 
     public AlarmState getState() {
@@ -33,6 +34,6 @@ public class Alarm {
     }
 
     public void setCode(String newCode) {
-        code = newCode;
+        this.code = newCode;
     }
 }
