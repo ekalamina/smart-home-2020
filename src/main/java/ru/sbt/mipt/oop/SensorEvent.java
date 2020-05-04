@@ -9,6 +9,7 @@ public class SensorEvent {
         this.objectId = objectId;
     }
 
+
     public SensorEventType getType() {
         return type;
     }
